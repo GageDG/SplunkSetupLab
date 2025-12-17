@@ -22,6 +22,7 @@ Install Splunk enterprise and ensure that it is properly running.
 4. I navigated to the new location using (_cd /opt/splunk/bin_) then executed the run command (_./splunk start --accept-license_)
 5. Once the setup process was completed Splunk required a username where I used (splunkadmin) for testing purposes.
 6. I completed the setup process by entering a password, after which the service came online.
+7. I then navigated to the local domain address which is (http://coffely:8000)
 
 ### Commands Used
 
@@ -33,7 +34,7 @@ cd /opt/splunk/bin
 ./splunk start --accept-license
 ```
 
-### Expected Result
+### Results
 
 * Splunk service starts successfully
 * Web interface becomes accessible on port `8000`
