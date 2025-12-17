@@ -41,6 +41,8 @@ cd /opt/splunk/bin
 
 📸 **Screenshot:** Terminal showing successful Splunk startup
 
+photos/LinuxRunServ.png
+
 ---
 
 ## 2. Accessing Splunk Web Interface
