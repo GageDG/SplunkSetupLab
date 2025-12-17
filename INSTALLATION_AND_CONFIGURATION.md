@@ -14,16 +14,19 @@ This document outlines the installation verification and configuration steps per
 
 Install Splunk enterprise and ensure that it is properly running.
 
-### Actions Taken
+### Steps Taken in executed order
 
-* Verified Splunk directory structure (`/opt/splunk`)
-* Started Splunk service
-* Accepted license agreement
-* Created administrative user
+1. CD into the downloads folder were the Splunk Installer was located
+2. Once in the proper directory I gave myself sudo permissions then executed the install command (_tar xvzf splunk_installer.tgz_)
+3. The install was succesful so I moved the installed folder to the recommended 'opt' directory using the (_mv splunk /opt/_) command
+4. I navigated to the new location using (_cd /opt/splunk/bin_) then executed the run command (_./splunk start --accept-license_)
+5. Once the setup process was completed Splunk required a username where I used (splunkadmin) for testing purposes.
+6. I completed the setup process by entering a password, after which the service came online.
 
 ### Commands Used
 
 ```bash
+sudo su
 tar xvzf splunk_installer.tgz
 mv splunk /opt/
 cd /opt/splunk/bin
