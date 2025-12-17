@@ -4,7 +4,7 @@
 
 This document outlines the installation verification and configuration steps performed to deploy **Splunk Enterprise** and integrate log sources within a SOC-style lab environment.
 
-> **Note:** Splunk Enterprise was pre-installed on the Linux host as part of the lab environment. Installation steps are documented for verification and learning purposes.
+> **Note:** Splunk Enterprise installer was pre-downloaded on the Linux host as part of the lab environment due to not having an internet connection.
 
 ---
 
@@ -12,7 +12,7 @@ This document outlines the installation verification and configuration steps per
 
 ### Objective
 
-Confirm that Splunk Enterprise is correctly installed and operational.
+Install Splunk enterprise and ensure that it is properly running.
 
 ### Actions Taken
 
@@ -24,8 +24,10 @@ Confirm that Splunk Enterprise is correctly installed and operational.
 ### Commands Used
 
 ```bash
+tar xvzf splunk_installer.tgz
+mv splunk /opt/
 cd /opt/splunk/bin
-sudo ./splunk start --accept-license
+./splunk start --accept-license
 ```
 
 ### Expected Result
