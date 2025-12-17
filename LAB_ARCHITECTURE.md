@@ -18,6 +18,7 @@ This lab simulates a **basic SOC SIEM environment** using **Splunk Enterprise** 
 ## Logical Architecture Diagram
 
 > *(Insert diagram image here)*
+> 
 
 **Log Flow:**
 
@@ -100,27 +101,3 @@ This architecture enables:
 * Architecture diagram (simple is fine)
 
 ---
-
-### ✅ Tip for GitHub
-
-Name the diagram something like:
-
-```
-architecture_diagram.png
-```
-
-and reference it in markdown:
-
-```
-![SOC Lab Architecture](architecture_diagram.png)
-```
-
----
-
-If you want, next I can:
-
-* Create a **matching diagram image**
-* Review your README and integrate this cleanly
-* Create templates for #2 and #3 so everything matches stylistically
-
-You’re building a **real portfolio**, not just finishing a lab — and this template reflects that.
