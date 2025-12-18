@@ -39,10 +39,6 @@ cd /opt/splunk/bin
 * Splunk service starts successfully
 * Web interface becomes accessible on port `8000`
 
-📸 **Screenshot:** Terminal showing successful Splunk startup
-
-photos/LinuxRunServ.png
-
 ---
 
 ## 2. Accessing Splunk Web Interface
@@ -54,15 +50,16 @@ Confirm Splunk Web is reachable and functional.
 * Accessed Splunk Web at:
 
   ```
-  http://<splunk-server-ip>:8000
+  http://coffely:8000
   ```
 * Logged in using admin credentials
 
-📸 **Screenshot:** Splunk Enterprise login page
+📸 **Screenshot:** Splunk Enterprise main page
+![](photos/LinuxRunServ.png)
 
 ---
 
-## 3. Splunk Configuration (Server)
+## 3. Splunk Configuration (Linux)
 
 ### Listening Port Configuration
 
@@ -78,14 +75,17 @@ Configured Splunk to receive forwarded logs on TCP port `9997`.
 
 ### Objective
 
-Install and configure Universal Forwarder on log source hosts.
+Install and configure Universal Forwarder on log source host.
 
-#### Windows Host
+### Steps Taken in executed order
 
-* Installed Splunk Universal Forwarder
-* Configured to forward logs to Splunk server
+1. Navigated to the downloads folder and gave myself needed sudo permissions using (_sudo su_)
+2. Next I began the installation of the forwarder using the command (_tar xvzf splunkforwarder.tgz_)
+3. Once installation was complete I moved the folder to the recomended opt folder using the command (_mv splunkforwarder /opt/_)
+4. Next I navigated to the new folder location and then ran the forwarder using the command (_./bin/splunk start --accept-license_)
+5. I filled in all required user information and changed the port to 8090 because the default port (8089) was already in use by the Splunk Enterprise host.
 
-#### Linux Host (if applicable)
+#### Linux Host
 
 * Installed forwarder package
 * Configured forwarding destination
@@ -93,39 +93,6 @@ Install and configure Universal Forwarder on log source hosts.
 📸 **Screenshot:** Forwarder installation confirmation
 
 ---
-
-## 5. Log Source Configuration
-
-### Windows Event Logs
-
-* Configured forwarder to ingest:
-
-  * Security
-  * System
-  * Application logs
-
-📸 **Screenshot:** Windows logs appearing in Splunk
-
----
-
-## 6. Verification & Validation
-
-### Objective
-
-Ensure logs are successfully ingested and searchable.
-
-### Search Used
-
-```spl
-index=* | stats count by host
-```
-
-### Result
-
-* Logs visible from both Linux and Windows hosts
-* Hostnames correctly identified
-
-📸 **Screenshot:** Splunk search results showing multiple hosts
 
 ---
 
@@ -154,36 +121,3 @@ index=* | stats count by host
 * SOC-style documentation practices
 
 ---
-
-## When to Split Files Later
-
-Only split into:
-
-* `INSTALLATION.md`
-* `CONFIGURATION.md`
-
-**If** you add:
-
-* Multiple data sources
-* Dashboards
-* Alerts
-* Detection engineering
-
-For now — **keep it together**.
-
----
-
-## Final Verdict
-
-✔ One combined file
-✔ Clear separation inside
-✔ Transparent about pre-install
-✔ Perfect for resume + interviews
-
-If you want next, I can:
-
-* Review your current README and align wording
-* Help you phrase this **exactly** how SOC interviewers expect
-* Create a **Detection & Analysis** template (huge resume boost)
-
-You’re building this the *right* way.
